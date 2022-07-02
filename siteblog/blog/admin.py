@@ -3,7 +3,6 @@ from django import forms
 from ckeditor.widgets import CKEditorWidget
 from ckeditor_uploader.widgets import CKEditorUploadingWidget
 from django.utils.safestring import mark_safe
-
 from .models import Category, Tag, Post
 
 
@@ -25,7 +24,7 @@ class PostAdmin(admin.ModelAdmin):
     list_display = ('id', 'title', 'slug', 'category', 'created_at', 'get_photo')
     list_display_links = ('id', 'title')
     search_fields = ('title',)
-    list_filter = ('category',)
+    list_filter = ('category', 'tags')
     readonly_fields = ('views', 'created_at', 'get_photo')
     fields = ('title', 'slug', 'category', 'tags', 'content', 'photo', 'get_photo', 'views', 'created_at')
 

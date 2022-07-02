@@ -1,6 +1,5 @@
 {% load static %}
 {% load cache %}
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,7 +26,6 @@
         {% endcache %}
 
         {% block content%} {% endblock %}
-
 
         {% cache 20 footer %}
         {% include 'inc/_footer.html' %}
